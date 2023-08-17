@@ -277,15 +277,34 @@ img {
   width: 24%;
 }
 
+.hero__form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  margin-bottom: 20px;
+}
+
 .form__label {
   display: block;
+  width: 100%;
   margin-bottom: 8px;
 }
 
 .form__input {
   max-width: 70%;
   width: 100%;
-  margin-bottom: 20px;
+  height: 50px;
   padding: 11.2px;
   font-size: 16px;
   color: rgba(63, 62, 65, 0.7019607843);
@@ -421,7 +440,10 @@ img {
     font-size: 32px;
   }
   .form__input {
-    width: 60%;
+    width: 50%;
+  }
+  .form__input--time {
+    width: auto;
   }
   .hero__list {
     padding-left: 40px;

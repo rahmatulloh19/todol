@@ -36,14 +36,23 @@
 .heading__img {
   width: 24%;
 }
+.hero__form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  margin-bottom: 20px;
+}
 .form__label {
   display: block;
+  width: 100%;
   margin-bottom: 8px;
 }
 .form__input {
   max-width: 70%;
   width: 100%;
-  margin-bottom: 20px;
+  height: 50px;
   padding: 11.2px;
   font-size: 16px;
   color: #3f3e41b3;
@@ -163,7 +172,11 @@
   }
   
   .form__input {
-    width: 60%;
+    width: 50%;
+  }
+
+  .form__input--time {
+    width: auto;
   }
 
   .hero__list {
