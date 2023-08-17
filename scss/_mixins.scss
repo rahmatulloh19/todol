@@ -1,0 +1,58 @@
+@use "veriables";
+
+@mixin layout($display:flex, $jc:space-between, $ai:center) {
+  display: $display;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin default-text($bottom:0, $fz:13px, $fw:400, $lh:normal, $color:inherit) {
+  margin-top: 0;
+  margin-bottom: $bottom;   
+  font-size: $fz;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin list-unstyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin hover ($color, $bgc) {
+  color: $color;
+  background-color: $bgc;
+}
+
+@mixin psevdo-el ($display:block, $width, $height, $address, $bgp:0 0) {
+  display: $display;
+  width: $width;
+  height: $height;
+  background-image: url($address);
+  background-position: $bgp;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+}
+
+@mixin responsive($min) {
+  @media only screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin retinaImg {
+  /* Retina background images */
+  
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    @content;
+  }
+}

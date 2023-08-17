@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Project</title>
+</head>
+<body>
+  <main class="site-main">
+    <section class="site-main__hero hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__heading heading">
+            <img class="heading__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg">
+            <h1 class="heading__title">To-Do List</h1>
+          </div>
+          <form class="hero__form form" autocomplete="off">
+            <div>
+              <label class="form__label" for="todo">~ Today I need to ~</label>
+              <input class="form__input" type="text" id="todo" name="to_do">
+              <button class="form__button buttons-styles">
+                <span class="form__button-inner buttons-styles-inner">Submit</span>
+              </button>
+            </div>
+          </form>
+          <div>
+            <ul class="hero__list">
+              <li class="hero__item">
+                rahmatullogh
+                <div class="hero__item-inner">
+                  <button class="hero__item-btn buttons-styles hero__item--styles">
+                    <span class="hero__item-edit hero__item--inner buttons-styles-inner"></span>
+                  </button>
+                  <button class="hero__item-btn buttons-styles hero__item--styles">
+                    <span class="hero__item-delete hero__item--inner buttons-styles-inner"></span>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="./js/main.js"></script>
+</body>
+</html>

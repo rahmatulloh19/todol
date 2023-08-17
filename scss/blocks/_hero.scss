@@ -1,0 +1,174 @@
+@use "../mixins" as m;
+
+/* Hero styles started */
+
+.hero {
+  padding: 16px;
+  text-align: center;
+  color: #494a4b;
+}
+
+.hero__inner {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+  background: #f1f5f8;
+  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+  background-size: 25px 25px;
+  border-radius: 20px;
+  box-shadow: 4px 3px 7px 2px #00000040;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.heading__title {
+  padding: 3.2px 19.2px;
+  font-size: 24px;
+  background-color: #00ffc3b3;
+  transform: rotate(2deg);
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+}
+
+.heading__img {
+  width: 24%;
+}
+.form__label {
+  display: block;
+  margin-bottom: 8px;
+}
+.form__input {
+  max-width: 70%;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 11.2px;
+  font-size: 16px;
+  color: #3f3e41b3;
+  background-color: transparent;
+  border: solid 3px transparent;
+  border-bottom: dashed 3px #ea95e0;
+  border-bottom-right-radius: 15px 3px;
+  border-bottom-left-radius:3px 15px;
+  transition: border 0.3s ease-in;
+  &:focus {
+    outline: none;
+    border: solid 3px #ea95e0;
+  }
+}
+
+.buttons-styles {
+  padding: 0 0 3px;
+  background-image: url("../../images/weav.gif");
+  background-color: hsla(166, 100%, 50%, 0.7);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 #494a4b;
+  transform: rotate(4deg);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &:active {
+    padding-bottom: 0px;
+    transform: translateY(4px);
+    outline: 0;
+  }
+  &:focus {
+    padding-bottom: 0px;
+    transform: translateY(4px);
+    outline: 0;
+  }
+}
+
+.buttons-styles-inner {
+  background: #f1f5f8;
+  display: block;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 2px solid #494a4b;
+}
+
+.form__button {
+  margin-left: 8px;
+}
+
+.hero__list {
+  padding-left: 20px;
+  list-style: none;
+  text-align: left;
+  font-size: 25px;
+}
+
+.hero__item {
+  position: relative;
+  @include m.layout();
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.5s ease;
+  &:hover {  
+    background-color: #80808010;
+  }
+  &:active {
+    background-color: #80808048;
+  }
+  &::before {
+    position: absolute;
+    left: -20px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: #494a4b;
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+.hero__item--inner {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero__item-edit {
+  background-image: url("../../images/pencil.png");
+}
+
+.hero__item-delete {
+  background-image: url("../../images/garbage.png");
+}
+
+.hero__item-btn:hover .hero__item-edit{
+  background-image: url("../../images/pencil.gif");
+}
+
+.hero__item-btn:focus .hero__item-edit{
+  background-image: url("../../images/pencil.gif");
+}
+
+.hero__item-btn:hover .hero__item-delete{
+  background-image: url("../../images/garbage.gif");
+}
+
+.hero__item-btn:focus .hero__item-delete{
+  background-image: url("../../images/garbage.gif");
+}
+
+
+@include m.responsive(500px) {
+  .heading__title{
+    font-size: 32px;
+  }
+  
+  .form__input {
+    width: 60%;
+  }
+
+  .hero__list {
+    padding-left: 40px;
+  }
+}
+
+/* Hero styles finished */
