@@ -13640,7 +13640,7 @@ img {
 }
 
 .hero__inner {
-  max-width: 500px;
+  max-width: 503px;
   margin: 0 auto;
   padding: 16px;
   background: #f1f5f8;
@@ -13868,8 +13868,17 @@ img {
   .heading__title {
     font-size: 32px;
   }
+  .hero__input-wrapper {
+    display: grid;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    grid-template-columns: 2fr 1fr;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+  }
   .form__input {
-    width: 50%;
+    max-width: none;
   }
   .form__input--time {
     width: auto;
