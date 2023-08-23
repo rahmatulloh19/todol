@@ -3,7 +3,7 @@
 /* Hero styles started */
 
 .hero {
-  padding: 16px;
+  padding: 16px 0;
   text-align: center;
   color: #494a4b;
 }
@@ -41,7 +41,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 15px;
+  gap: 20px 15px;
   margin-bottom: 20px;
 }
 .form__label {
@@ -99,11 +99,12 @@
 }
 
 .form__button {
+  margin-top: 15px;
   margin-left: 8px;
 }
 
 .hero__list {
-  padding-left: 20px;
+  padding-left: 0;
   list-style: none;
   text-align: left;
   font-size: 25px;
@@ -111,8 +112,11 @@
 
 .hero__item {
   position: relative;
-  @include m.layout();
-  padding: 8px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+  padding: 8px 8px 8px 20px;
   border-radius: 8px;
   transition: background-color 0.5s ease;
   &:hover {  
@@ -123,7 +127,7 @@
   }
   &::before {
     position: absolute;
-    left: -20px;
+    left: 5px;
     display: block;
     width: 5px;
     height: 5px;
@@ -133,7 +137,27 @@
   }
 }
 
+.hero__item--start {
+  display: block;
+  text-align: center;
+  &::before {
+    display: none;
+  }
+}
+
+.hero__item-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  text-align: right;
+}
+
+.hero__time {
+  width: 100%;
+}
+
 .hero__item--inner {
+  display: flex;
   width: 24px;
   height: 24px;
   background-size: contain;
@@ -179,8 +203,20 @@
     width: auto;
   }
 
-  .hero__list {
+  .hero__item {
+    @include m.layout;
     padding-left: 40px;
+  }
+
+  .hero__item--start {
+    display: block;
+    padding-left: 0;
+  }
+}
+
+@include m.responsive(542px) {
+  .form__button {
+    margin-top: 0;
   }
 }
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/main.css">
   <title>Project</title>
 </head>
@@ -18,7 +19,7 @@
           <form class="hero__form js-hero__form" autocomplete="off">
             <div class="hero__form-wrapper">
               <label class="form__label" for="todo">~ Today I need to ~</label>
-              <input class="form__input js-form__input" type="text" id="todo" name="to_do">
+              <input class="form__input js-form__input" type="text" id="todo" name="to_do" required>
               <input class="form__input form__input--time js-form__input-time" type="time" name="time">
               <button class="form__button buttons-styles">
                 <span class="form__button-inner buttons-styles-inner">Submit</span>
@@ -33,6 +34,7 @@
     </section>
   </main>
   
+  <script src="./js/bootstrap.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

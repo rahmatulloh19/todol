@@ -234,7 +234,7 @@ img {
 /* Site header styles end */
 /* Hero styles started */
 .hero {
-  padding: 16px;
+  padding: 16px 0;
   text-align: center;
   color: #494a4b;
 }
@@ -289,9 +289,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 15px;
-     -moz-column-gap: 15px;
-          column-gap: 15px;
+  gap: 20px 15px;
   margin-bottom: 20px;
 }
 
@@ -360,11 +358,12 @@ img {
 }
 
 .form__button {
+  margin-top: 15px;
   margin-left: 8px;
 }
 
 .hero__list {
-  padding-left: 20px;
+  padding-left: 0;
   list-style: none;
   text-align: left;
   font-size: 25px;
@@ -372,16 +371,15 @@ img {
 
 .hero__item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 8px;
+  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  padding: 8px 8px 8px 20px;
   border-radius: 8px;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
@@ -394,7 +392,7 @@ img {
 }
 .hero__item::before {
   position: absolute;
-  left: -20px;
+  left: 5px;
   display: block;
   width: 5px;
   height: 5px;
@@ -403,7 +401,34 @@ img {
   content: "";
 }
 
+.hero__item--start {
+  display: block;
+  text-align: center;
+}
+.hero__item--start::before {
+  display: none;
+}
+
+.hero__item-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  text-align: right;
+}
+
+.hero__time {
+  width: 100%;
+}
+
 .hero__item--inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 24px;
   height: 24px;
   background-size: contain;
@@ -445,8 +470,26 @@ img {
   .form__input--time {
     width: auto;
   }
-  .hero__list {
+  .hero__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-left: 40px;
+  }
+  .hero__item--start {
+    display: block;
+    padding-left: 0;
+  }
+}
+@media only screen and (min-width: 542px) {
+  .form__button {
+    margin-top: 0;
   }
 }
 /* Hero styles finished */
