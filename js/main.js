@@ -2,6 +2,9 @@ const elForm = document.querySelector(".js-hero__form");
 const elList = document.querySelector(".js-hero__list");
 const elWork = document.querySelector(".js-form__input");
 const elTime = document.querySelector(".js-form__input-time");
+const elModalForm = document.querySelector(".js-modal-form");
+const elModalInput = document.querySelector(".js-form-input");
+const elModalTime = document.querySelector(".js-form-input-time");
 
 const todo = JSON.parse(localStorage.getItem("todos") || "[]");
 localStorage.setItem("todos", JSON.stringify(todo));
@@ -23,8 +26,8 @@ function renderToDos (array) {
     const wrapperElement = document.createElement("div");
     wrapperElement.classList.add("hero__item-inner");
     wrapperElement.innerHTML = `<time class="hero__time" datetime="${item.time}">${item.time}</time>
-    <button class="hero__item-btn buttons-styles edit" data-id=${item.id}>
-    <span class="hero__item-edit hero__item--inner buttons-styles-inner" data-id=${item.id}></span>
+    <button class="hero__item-btn buttons-styles edit" data-id=${item.id} data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <span class="hero__item-edit hero__item--inner buttons-styles-inner" data-id=${item.id}  data-bs-toggle="modal" data-bs-target="#exampleModal"></span>
     </button>
     <button class="hero__item-btn buttons-styles delete" data-id=${item.id}>
     <span class="hero__item-delete hero__item--inner buttons-styles-inner" data-id=${item.id}></span>
@@ -63,12 +66,17 @@ elList.addEventListener("click", evt => {
     const editId = evt.target.dataset.id;
     const editObj = todo.find(item => item.id == editId);
     
-    const editWork = prompt("Enter what do you change", editObj.title);
-    if(editWork !== null) {
-      editObj.title = editWork;
-      editObj.time = hours + ":" + minutes;
-    }
-    localStorage.setItem("todos", JSON.stringify(todo))
+    elModalInput.value = editObj.title;
+    elModalTime.value = editObj.time;
+    elModalForm.addEventListener("submit", () => {
+      const elModalInputValue = elModalInput.value.trim();
+      const elModalTimeValue = elModalTime.value;
+      
+      console.log(elModalTimeValue, elModalInputValue);
+      editObj.title = elModalInputValue;
+      editObj.time = elModalTimeValue;
+      localStorage.setItem("todos", JSON.stringify(todo))
+    })
     renderToDos(todo);
   }
 })

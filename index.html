@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="shortcut icon" href="./images/todo.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/main.css">
-  <title>Project</title>
+  <title>To Do List</title>
 </head>
 <body>
   <main class="site-main">
@@ -13,7 +13,7 @@
       <div class="container">
         <div class="hero__inner">
           <div class="hero__heading heading">
-            <img class="heading__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/laptop.svg" width="200" height="200" alt="Tablet's image">
+            <img class="heading__img" src="./images/laptop.svg" width="200" height="200" alt="Tablet's image">
             <h1 class="heading__title">To-Do List</h1>
           </div>
           <form class="hero__form js-hero__form" autocomplete="off">
@@ -33,6 +33,35 @@
       </div>
     </section>
   </main>
+  
+  
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="modal-form js-modal-form form" autocomplete="off" id="submit_btn">
+            <input class="form__input js-form-input" type="text" id="todo" name="to_do" required>
+            <input class="form__input form__input--time js-form-input-time" type="time" name="time">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="form__button buttons-styles">
+            <span class="form__button-inner buttons-styles-inner" data-bs-dismiss="modal">Close</span>
+          </button>
+          <button class="form__button buttons-styles" form="submit_btn" type="submit">
+            <span class="form__button-inner buttons-styles-inner">Save changes</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/main.js"></script>

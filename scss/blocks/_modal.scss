@@ -1,0 +1,62 @@
+@use "../mixins" as m;
+
+/* Modal styles started */
+
+.modal-content {
+  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0) !important;
+  background-size: 25px 25px;
+}
+
+.modal-header,
+.modal-footer {
+  border: 0;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.modal-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
+  column-gap: 10px;
+}
+
+.modal .form__input {
+  max-width: none;
+  width: 100%;
+}
+
+// .modal .form__input--time {
+//   width: 40%;
+// }
+
+.modal .buttons-styles,
+.modal .buttons-styles-inner,
+.modal-title {
+  font-size: 18px;
+}
+
+.modal-footer {
+  column-gap: 10px;
+}
+
+@include m.responsive(500px) {
+  .modal-title {
+    font-size: 28px;
+  }
+
+  .modal-form {
+    
+  }
+  .modal .buttons-styles,
+  .modal .buttons-styles-inner {
+    font-size: 24px;
+  }
+}
+
+/* Modal styles finished */
